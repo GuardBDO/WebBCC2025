@@ -115,9 +115,18 @@ function cadastrarCliente(cliente)
         },
         "body": JSON.stringify(cliente)
     })
-    .then()
-    .then()
-    .catch();
+    .then((resposta)=>{
+        if(resposta.ok){
+            return resposta.json();
+        }
+    })
+    .then((dados)=>{
+        alert(`Cliente incluido com sucesso! ID:${dados.id}`);
+        mostrarTabelaClientes();
+    })
+    .catch((erro)=>{
+        alert("Erro ao cadastrar o cliente:"+erro);
+    });
 }
 
 obterDadosClientes();
