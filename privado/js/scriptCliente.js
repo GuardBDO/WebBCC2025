@@ -106,4 +106,18 @@ function obterDadosClientes(){
     });
 }
 
+function cadastrarCliente(cliente)
+{
+    fetch(urlBase, {
+        method:"POST",
+        headers:{
+            "content-type":"application/json",
+        },
+        "body": JSON.stringify(cliente)
+    })
+    .then()
+    .then()
+    .catch();
+}
+
 obterDadosClientes();
